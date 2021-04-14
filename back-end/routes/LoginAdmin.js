@@ -5,16 +5,19 @@ var bcrypt = require("bcryptjs");
 const router = Router();
 
 
+
+
+
 //////////-----------admin login
 router.post("/loginAdmin", async (req, res) => {
     const admin = req.body;
-    console.log(user);
+    console.log(admin);
     try {
-      users.findOne({ email: admin.adminemail }, (err, doc) => {
+      admin.findOne({ email: admin.adminemail }, (err, doc) => {
         if (!doc) {
           res.json("user_not_found");
         } else {
-          bcrypt.compare(user.password, doc.password, function (err, result) {
+          bcrypt.compare(admin.password, doc.password, function (err, result) {
             if (result !== false) {
               res.status(200).json(doc);
             } else {

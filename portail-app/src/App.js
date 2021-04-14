@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoginA from './component/LoginAdmin/loginA'
-
+import SignupManager from './component/signupManager/signupManager'
 import {Route,BrowserRouter as Router,Switch,Link}from "react-router-dom";
 
 
@@ -21,8 +21,8 @@ export default class App extends Component {
   render() {
     return (
         <div className="App"> 
-       
-            <LoginA></LoginA>
+       <SignupManager></SignupManager>
+            {/* <LoginA></LoginA> */}
         
 
         
