@@ -18,52 +18,44 @@ export default class signin extends Component {
       email: this.state.email,
       password: this.state.password,
     });
+
   }
+
   render() {
     return (
-      <div className="logs">
-        <h1>Register Here</h1>
-        <div className="textbox">
-          <i className="fas fa-user"></i>
-          <input
-            type="text"
-            placeholder="Put Your Username "
-            onChange={(e) => this.setState({ username: e.target.value })}
-          ></input>
-        </div>
-        <hr></hr>
-        <div className="textbox">
-          <i className="fas fa-user"></i>
-          <input
-            type="email"
-            placeholder="Put Your Email "
-            onChange={(e) => this.setState({ email: e.target.value })}
-          ></input>
-        </div>
-        <hr></hr>
-        <div className="textbox">
-          <i className="fas fa-lock"></i>
-          <input
-            type="password"
-            placeholder="Enter your Password"
-            onChange={(e) => this.setState({ password: e.target.value })}
-          ></input>
-        </div>
-        <div className="textbox">
-          <i className="fas fa-lock"></i>
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            onChange={this.handleChangeconfirmpass}
-            value={this.state.confirmpassword}
-          />
-        </div>
-        <hr></hr>
-        <button className="btn" type="submit" onClick={this.signin.bind(this)}>
-          submit
-        </button>
-        <hr></hr>
-      </div>
+
+      <div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+	    <span></span>
+      <input type="username" placeholder="username"  onChange={(e=> this.setState({username:e.target.value}))}/>
+			<input type="email" placeholder="Email"  onChange={(e=> this.setState({email:e.target.value}))}/>
+			<input type="password" placeholder="Password"  onChange={(e=> this.setState({password:e.target.value}))}/>
+			<span></span>
+			<button>Sign In</button>
+      <a href="#">Create Account </a>
+      <div className="signbtn">
+      <button >Sign Up</button></div>
+      
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome To Our App</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+			
+			</div>
+		</div>
+	</div>
+</div>
+     
     );
   }
 }
