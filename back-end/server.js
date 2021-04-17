@@ -12,9 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 
-//mongoose connect 
-mongoose
-  .connect(process.env.DB_CONNECTIONS, {
+////////////mongoose connect/////////////////
+mongoose.connect(process.env.DB_CONNECTIONS, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -23,7 +22,7 @@ mongoose
   .then(() => console.log("MongoDB database Connected..."))
   .catch((err) => console.log(err));
 
-
+////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -31,5 +30,10 @@ app.get('/',(req,res)=>{
     res.send('server is working !')
 })
 ////////////////////////////////////////////////////////////////////////////////////
+app.post('/',(req,res)=>{
+  res.send('testing server !');
+})
 
+
+///////////////////////////port listening ///////
 app.listen(port,()=>console.log(`server start on ${port}`));

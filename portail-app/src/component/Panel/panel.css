@@ -1,0 +1,123 @@
+body {
+    background: #fff;
+    font-family: sans-serif;
+    margin: 0;
+  }
+  h1 {
+    color: #428bca;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 55px;
+    margin-top: 10vh;
+    width:auto;
+  
+    letter-spacing: 8px;
+  }
+  .accordion-container:hover {
+    border-top: 1px solid;
+  }
+  .accordion-container {
+    width: 60%;
+    border-top: 1.5px solid;
+border-bottom: 1px solid;
+    border-color: #428bca;
+  /*   //min-width: 500px; */
+    margin: 5vh auto;
+  /*   //border-radius: 5px; */
+    background-color: #fff;
+    
+  }
+  .accordion-container:hover{
+    
+  }
+  .accordion-container div {
+    border-bottom: 1px solid;
+    border-top: 1px dotted;
+    border-color: #428bca;
+    transition: border-color 0.2s ease-in;
+  }
+  .accordion-container div:hover {
+    border-left: 2px dotted;
+    margin: -0px -2px 0px 0px;
+    padding: 0px -2px 0px 0px;
+    margin-left: -2px;
+    border-right: 3px solid;
+    border:3px solid;
+    border-color: #428bca;
+    transition: border-color 1s ease-in;
+  }
+  
+  .link, .summary {
+    display: inline-block;
+  }
+  .link:before {
+    font-size: 26px;
+    content: '↳';
+    margin-left: -20px;
+    margin-right: 10px;
+  }
+  .link {
+    
+    background: transparent;
+    color: black;
+  }
+  
+  .summary {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 24px;
+    padding: 10px;
+  }
+  .summary:before {
+    font-size: 24px;
+    content: '↓';
+  }
+  
+  .folding-pannel {
+    display: block;
+    transition: all 0.2s ease-in;
+    line-height: 0px;
+    border-top: 3px solid #428bca;
+    border-left: 10px solid #428bca;
+  }
+  .active .folding-pannel {
+    max-width: 85%;
+  }
+  /* .summary:hover:before {
+    position:relative;
+    content: '↓';
+    top-left: -24px
+    margin-right:0px;
+    padding-left:10px;
+    padding-top:20px;
+    padding-right:12px;
+  padding-bottom:-24px;} */
+  
+  .active .summary {
+    border-color: none;
+    transition: border-color 0.2s ease-out;
+    
+  }
+  .active .summary:before{
+ 
+  }
+  
+  .inactive .folding-pannel {
+    max-width: 85%;
+    transform-origin: 50% 0%;
+    transform: perspective(25px);
+    opacity:0;
+    transition: all 0.2s ease-in-out;
+    height: 5px;
+  }
+  
+  .active .folding-pannel {
+    transform: perspective(250px);
+    transition: all 0.2s ease-in-out;
+    height: 25px;
+    line-height: 10px;
+    text-indent: 50px;
+  }
+  
