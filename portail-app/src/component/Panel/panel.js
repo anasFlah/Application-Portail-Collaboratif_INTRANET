@@ -76,17 +76,25 @@ export default class ExpandingItem extends Component {
         <div>
           <h1>Expander Module (React/TypeScript)</h1>
           <div className="accordion-container">{Object.keys(this.state.tasks).map(this.renderTask)} </div>
+          {/* this for user list */}
+                    <Route path="/admin/users" component={UsersList} />
+                    {/* this for creting user */}
+                 <Route path="/admin/create" component={CreateUser} />
+                 {/* this for edit user */}
+              <Route path="/admin/edit/:id" component={EditUser} />
         </div>    
       )
     }
   }
   const sampleTasks = {
-    Task1: {summary:'Task 1', link:'link to Github Issue here'},
-    Task2: {summary:'Task 2', link:'link to Github Issue here'},
-    Task3: {summary:'Task 3', link:'link to Github Issue here'},
-    Task4: {summary:'Task 4', link:'link to Github Issue here'},
-    Task5: {summary:'Task 5', link:'link to Github Issue here'}
+    Task1: {summary:'user 1', link:'link to Github Issue here'},
+    Task2: {summary:'user 2', link:'link to Github Issue here'},
+    Task3: {summary:'user 2', link:'link to Github Issue here'},
+    Task4: {summary:'user 2', link:'link to Github Issue here'},
+    Task5: {summary:'user 2', link:'link to Github Issue here'}
   };
+  
+               
   ReactDOM.render(
     <Expander />,
     document.getElementById('mount-point')
